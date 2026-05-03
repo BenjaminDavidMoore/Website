@@ -1,0 +1,72 @@
+:root {
+  /* Forest palette — Pacific Northwest at golden hour */
+  --color-bg: #1c3a2e;          /* deep forest */
+  --color-bg-elev: #244a3b;     /* lifted surface */
+  --color-bg-deep: #142a21;     /* shadow */
+  --color-text: #f0e6d2;        /* warm bone */
+  --color-text-muted: #b8b09c;  /* faded sage */
+  --color-tan: #d4b88a;         /* warm sand */
+  --color-blue: #7fa8c1;        /* dusty slate-blue */
+  --color-orange: #e08b4a;      /* burnt orange — accent */
+  --color-border: rgba(240, 230, 210, 0.12);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --max-width: 1100px;
+
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--color-tan);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--color-orange);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background: var(--color-orange);
+  color: var(--color-bg-deep);
+}
