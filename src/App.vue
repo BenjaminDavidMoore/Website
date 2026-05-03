@@ -5,14 +5,14 @@ import NavBar from '@/components/NavBar.vue'
 <template>
   <NavBar />
   <main class="app-main">
-    <RouterView v-slot="{ Component }">
+    <RouterView v-slot="{ Component, route }">
       <Transition name="fade" mode="out-in">
-        <component :is="Component" />
+        <component :is="Component" :key="route.fullPath" />
       </Transition>
     </RouterView>
   </main>
   <footer class="app-footer">
-    <p>© {{ new Date().getFullYear() }} I've Ben Moore, LLC</p>
+    <p>© {{ new Date().getFullYear() }} I've Ben, LLC</p>
   </footer>
 </template>
 

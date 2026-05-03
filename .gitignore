@@ -10,3 +10,8 @@ dist-ssr
 .idea
 .vscode/*
 !.vscode/extensions.json
+tsconfig.tsbuildinfo
+
+# Personal/source materials kept locally only
+src/assets/*.pdf
+src/assets/CEA273F9-67A7-41DB-9206-C2FAAC30BE9F_1_105_c.jpeg

@@ -29,6 +29,9 @@ onBeforeUnmount(() => {
 <template>
   <section class="hero">
     <div class="hero__inner">
+      <p class="hero__greeting">
+        <span>Why hello there! I'm Ben Moore, and&hellip;</span>
+      </p>
       <h1 class="hero__title">
         <span class="hero__prefix">I've Ben</span>
         <span class="hero__roller" aria-live="polite" aria-atomic="true">
@@ -38,7 +41,7 @@ onBeforeUnmount(() => {
         </span>
       </h1>
       <p class="hero__subtitle">
-        Tech consulting, side projects, and assorted curiosities.
+        Tech consulting, side projects, and a miriad of other assorted curiosities.
       </p>
     </div>
   </section>
@@ -61,6 +64,13 @@ onBeforeUnmount(() => {
   width: 100%;
 }
 
+.hero__greeting {
+  margin: 0 0 2rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  color: var(--color-text-muted);
+  line-height: 1.2;
+}
+
 .hero__title {
   font-family: var(--font-display);
   font-size: clamp(3rem, 11vw, 8rem);
@@ -69,9 +79,10 @@ onBeforeUnmount(() => {
   letter-spacing: -0.025em;
   margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.1em;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.25em;
+  row-gap: 0.1em;
 }
 
 .hero__prefix {
@@ -81,8 +92,9 @@ onBeforeUnmount(() => {
 .hero__roller {
   position: relative;
   display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
+  overflow: clip;
+  overflow-clip-margin: 0.25em;
+  vertical-align: baseline;
   line-height: 1.15;
   color: var(--color-orange);
   font-style: italic;
