@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router'
 const links = [
   { to: '/consulting', label: 'Consulting' },
   { to: '/making', label: 'Making' },
-  { to: '/wondering', label: 'Wondering' },
+  { to: '/reading', label: 'Reading' },
   { to: '/adventuring', label: 'Adventuring' },
 ] as const
 </script>
@@ -56,6 +56,7 @@ const links = [
   letter-spacing: -0.01em;
   color: var(--color-text);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .nav__brand:hover {

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import CareerTimeline from '@/components/CareerTimeline.vue'
+import { nextTick, onMounted, ref, watch } from 'vue'
+import { DIALEXA_INTRO } from '@/data/career'
+import EraChapters from '@/components/EraChapters.vue'
+import LogoWall from '@/components/LogoWall.vue'
+import IndependentPitch from '@/components/IndependentPitch.vue'
 
 type TabId = 'lucas' | 'dialexa' | 'independent'
 
-const timeline = ref<InstanceType<typeof CareerTimeline> | null>(null)
 const activeTab = ref<TabId>('dialexa')
 
 const tabs: { id: TabId; label: string; dates: string }[] = [
@@ -13,11 +15,34 @@ const tabs: { id: TabId; label: string; dates: string }[] = [
   { id: 'independent', label: 'Independent Consulting', dates: '2026+' },
 ]
 
-function jumpTo(id: string, event: Event) {
+/** Scrolls the intro links to their project card and flashes it briefly. */
+async function jumpTo(id: string, event: Event) {
   event.preventDefault()
   activeTab.value = 'dialexa'
-  timeline.value?.goToEntry(id)
+  await nextTick()
+  const el = document.getElementById(`project-${id}`)
+  if (!el) return
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  el.classList.remove('card--flash')
+  void el.offsetWidth // restart the animation if the same link is clicked twice
+  el.classList.add('card--flash')
 }
+
+const TAB_IDS = tabs.map((t) => t.id)
+
+function isTabId(value: string): value is TabId {
+  return (TAB_IDS as string[]).includes(value)
+}
+
+/** Tabs are linkable — /consulting#independent opens that panel directly. */
+onMounted(() => {
+  const fromHash = window.location.hash.slice(1)
+  if (isTabId(fromHash)) activeTab.value = fromHash
+})
+
+watch(activeTab, (id) => {
+  history.replaceState(null, '', `#${id}`)
+})
 
 function onTabKeydown(event: KeyboardEvent, index: number) {
   if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return
@@ -91,43 +116,46 @@ function onTabKeydown(event: KeyboardEvent, index: number) {
         </header>
 
         <div class="consulting__intro">
-          <p>
-            One of the most impactful things about my career is that I got to
-            start working at a consulting company that was also a startup. And
-            if you've worked in either, you know that you quickly learn how to
-            learn, think quickly on your feet, and solve all kinds of problems
-            and take on all kinds of roles. This played incredibly well with
-            my endless curiosity and passion for doing things well. In the end
-            I can do many things, but TL;DR:
-          </p>
+          <p>{{ DIALEXA_INTRO }}</p>
           <ul class="consulting__breadth">
             <li>
-              I can <strong class="consulting__verb">Deliver</strong> at
-              <a href="#parkhub-2015" @click="jumpTo('parkhub-2015', $event)">startups</a>
+              <strong class="consulting__verb">Delivered</strong> at
+              <a href="#project-parkhub" @click="jumpTo('parkhub', $event)">startups</a>
               and at
-              <a href="#pwc-att-2018" @click="jumpTo('pwc-att-2018', $event)">enterprise scale</a>.
+              <a href="#project-pwc-att" @click="jumpTo('pwc-att', $event)">enterprise scale</a>.
             </li>
             <li>
-              I can <strong class="consulting__verb">Lead</strong>
-              <a href="#pwc-boardingpass-2019" @click="jumpTo('pwc-boardingpass-2019', $event)">small teams</a>
-              up through
-              <a href="#imh-refactor-2022" @click="jumpTo('imh-refactor-2022', $event)">giant 47-person programs</a>.
+              <strong class="consulting__verb">Led</strong>
+              <a href="#project-pwc-boardingpass" @click="jumpTo('pwc-boardingpass', $event)">small teams</a>
+              and a
+              <a href="#project-intermountain" @click="jumpTo('intermountain', $event)">47-person combined program</a>.
             </li>
             <li>
-              I can <strong class="consulting__verb">Sell</strong> to
-              <a href="#fnti-2024" @click="jumpTo('fnti-2024', $event)">small clients</a>
+              <strong class="consulting__verb">Sold</strong> to
+              <a href="#project-fnti" @click="jumpTo('fnti', $event)">small clients</a>
               and
-              <a href="#bcg-varian-2024" @click="jumpTo('bcg-varian-2024', $event)">Fortune-500-tier accounts</a>,
-              hitting sales targets of well over $15M / year.
+              <a href="#project-bcg-varian" @click="jumpTo('bcg-varian', $event)">Fortune 500 accounts</a>.
+              Best year was $15M.
+            </li>
+            <li>
+              <strong class="consulting__verb">Architected</strong> for
+              <a href="#project-parkhub" @click="jumpTo('parkhub', $event)">startups</a>
+              and some of the largest
+              <a href="#project-mayo-clinic" @click="jumpTo('mayo-clinic', $event)">health systems in the country</a>.
             </li>
           </ul>
-          <p class="consulting__hint">
-            But in case you're curious, here's a full list of my work
-            experience. Click to learn more about each.
+        </div>
+
+        <LogoWall />
+
+        <div class="chapters-intro">
+          <h2 class="chapters-intro__title">The long version</h2>
+          <p class="chapters-intro__body">
+            12 years is a long time to work at one company. So I've broken it down into five chapters and some relevant engagements &mdash; Happy to talk through the rest.
           </p>
         </div>
 
-        <CareerTimeline ref="timeline" />
+        <EraChapters />
       </section>
 
       <section
@@ -141,10 +169,8 @@ function onTabKeydown(event: KeyboardEvent, index: number) {
           <h2 class="panel__title">Independent Consulting</h2>
           <p class="panel__subtitle">2026+ · The next chapter</p>
         </header>
-        <p class="panel__placeholder">
-          Coming soon &mdash; strategy, prototyping, and helping teams ship as
-          I move into independent work.
-        </p>
+
+        <IndependentPitch />
       </section>
     </div>
   </section>
@@ -320,10 +346,23 @@ function onTabKeydown(event: KeyboardEvent, index: number) {
   color: var(--color-orange);
 }
 
-.consulting__hint {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  font-style: italic;
-  margin: 0;
+.chapters-intro {
+  margin: 4rem 0 2.5rem;
+  max-width: 42rem;
 }
+
+.chapters-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
+}
+
+.chapters-intro__body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
 </style>
