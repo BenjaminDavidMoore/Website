@@ -22,11 +22,6 @@ const sections = [
     word: 'Reading',
     line: 'Everything I have listened my way through — heavy on science fiction, sorted by series.',
   },
-  {
-    to: '/adventuring',
-    word: 'Adventuring',
-    line: 'Mountains, overlanding, and the occasional idea that seemed better at the trailhead.',
-  },
 ]
 </script>
 

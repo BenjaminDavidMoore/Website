@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
         </h1>
 
         <p class="hero__intro">
-          I spent a decade going from intern to partner at a product
+          I spent a decade in consulting going from intern to partner at a product
           engineering firm in Dallas &mdash; building the software, leading the
           teams, and eventually selling the work. I&rsquo;m independent now.
           This site is the long version.
