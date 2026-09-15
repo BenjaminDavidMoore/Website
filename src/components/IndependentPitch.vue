@@ -22,17 +22,17 @@ interface Service {
 const SERVICES: Service[] = [
   {
     title: 'Enterprise architecture',
-    body: "Come in cold, work out what you've actually got, and give you a north-star architecture with a real path to reach it — sized, sequenced, and honest about the constraints. Regulated environments, legacy sprawl, and hardware in the loop are the interesting cases, not the disqualifying ones.",
+    body: "Come in cold, work out what you've actually got, and give you a north-star architecture with a real path to reach it — sized, sequenced, and honest about the constraints.",
     proof: 'Mayo Clinic, Agilent, Becton Dickinson, Varian, Intermountain Health',
   },
   {
-    title: 'Fractional CTO',
-    body: "Technical leadership when you don't need — or can't yet justify — a full-time executive. Setting direction, making the calls that are expensive to get wrong, standing up how the team works, and telling you plainly what I think is going sideways.",
+    title: 'Fractional Leadership',
+    body: "Technical leadership when you don't need, or can't yet justify, a full-time executive. Setting direction, helping make the calls that are expensive to get wrong, standing up how the team works, and telling you plainly what I think is going sideways.",
     proof: 'Intern to Partner over a decade; led a 47-person program to delivery',
   },
   {
     title: 'Accelerate the team you have',
-    body: 'Developing, motivating, and unblocking engineers is the part of this job I have enjoyed most. Onboarding that actually works, mentorship with structure behind it, and the unglamorous business of turning capable individuals into a team that ships.',
+    body: 'Developing, motivating, and unblocking engineers is the part of this job I have enjoyed most. Onboarding that actually works, mentorship with structure behind it, and the unglamorous business of turning capable individuals into a team that drives your cricial tech.',
     proof: '83 engineers onboarded; a report tree of 29 grown from associate to principal',
   },
   {
@@ -42,13 +42,13 @@ const SERVICES: Service[] = [
   },
   {
     title: 'Just build it',
-    body: 'Firmware, backend, frontend, mobile, infrastructure, and increasingly the AI layer on top. I have shipped in all of them, which is why my estimates hold up — and why I can pick up the tools and do the work myself when that is simply the fastest path.',
-    proof: 'CAN-bus firmware through GraphQL platforms and document processing pipelines',
+    body: 'Firmware, backend, frontend, mobile, infrastructure, and increasingly the AI layer on top. I have shipped products spanning across all of them and can dig in and help accelerate your existing build team hands-on.',
+    proof: 'Personally built and shipped over 48 products for customers from CAN-bus firmware through massive data-heavy platforms, to startup apps and internal productivity tools',
   },
   {
     title: 'A second opinion',
-    body: "Sometimes you need someone with no stake in the outcome to read the plan and tell you what they'd worry about. Short engagements, straight answers, no attempt to turn it into something bigger.",
-    proof: 'A decade of watching projects succeed and fail up close',
+    body: "Sometimes you need someone with no stake in the outcome to read the plan and tell you what they'd worry about. Short engagements, straight answers, no incentive to turn it into something bigger.",
+    proof: 'As a sales engineer, our job was to jump in, listen to problems and quickly assess the best direction based on what we heard. Sometimes that included more work, sometimes, it was just an honest perspective on things they could change',
   },
 ]
 </script>
@@ -63,13 +63,11 @@ const SERVICES: Service[] = [
       </h2>
       <p class="pitch__lede">
         Intern to Partner. Firmware to enterprise architecture. Writing the
-        code to selling eight-figure programs. Those are usually four
-        different people.
+        code to selling eight-figure programs. If any of this sounds like what you could use, I'd love to chat. 
       </p>
       <p class="pitch__lede">
         What I&rsquo;m after now is work that&rsquo;s genuinely interesting:
-        meaningful problems, novel ones, the kind nobody has a template for.
-        I don&rsquo;t much care how big it is or what industry it&rsquo;s in.
+        meaningful problems, novel ones, the kind nobody has a template for regardless of how big it is or what industry it&rsquo;s in.
         I&rsquo;m taking some real time off through the rest of the year, but
         I&rsquo;m already helping a few people think through ideas &mdash; so
         if you&rsquo;ve got one, tell me about it.

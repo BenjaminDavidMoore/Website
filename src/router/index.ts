@@ -22,11 +22,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/views/ReadingView.vue'),
   },
   {
-    path: '/adventuring',
-    name: 'adventuring',
-    component: () => import('@/views/AdventuringView.vue'),
-  },
-  {
     path: '/:pathMatch(.*)*',
     redirect: '/',
   },

@@ -133,7 +133,7 @@ export const ERAS: Era[] = [
     level: 'Independent',
     title: 'On My Own Terms',
     years: '2026 +',
-    roles: ['Fractional CTO', 'Enterprise Architect', 'Advisor', 'Builder'],
+    roles: ['Fractional Leadership', 'Enterprise Architect', 'Advisor', 'Builder'],
     narrative:
       "I made the difficult decision to leave in May 2026 to take some real time off to reassess, take on some new adventures I've not had time for, and just recover. But I've never been good at being idle and am always working on something, always keeping an eye out for the next thing. What I'm looking for now is work that's genuinely interesting, whatever the size or the industry. Have an idea? Hit me up.",
     stats: [],
@@ -352,7 +352,7 @@ export const PROJECTS: Project[] = [
     industry: 'healthcare',
     headline:
       'MyHealth+ — spotted the opening to convert a sub-contract into a direct client, then led a $2M+ re-architecture across 50+ people.',
-    body: "Through relationships built during the BCG work, I saw an opening to convert Intermountain into a standalone client, and did. That led directly to a request to re-architect the platform we had just built so it could meet new business objectives — and then to a $2M+ build phase once funding cleared. I led both the Dialexa team and Intermountain's internal MyHealth+ team, and was able to build a flexible, EHR-agnostic architecture to enable future acquisitions they had on their roadmap.",
+    body: "Through relationships built during the BCG work, I saw an opening to convert Intermountain into a standalone client, and did. That led directly to a request to re-architect the platform we had just built to flex the same functionality across multiple EHRs so it could meet new business objectives which then led to a $2M+ build phase. I led both the Dialexa team and Intermountain's internal MyHealth+ team, and was able to build a flexible, EHR-agnostic architecture to enable future acquisitions they had on their roadmap.",
     impact: [
       'Converted a sub-contracted role into a direct client relationship',
       '$2M+ build phase sold and delivered',
@@ -404,8 +404,8 @@ export const PROJECTS: Project[] = [
     role: 'Enterprise Architect',
     industry: 'healthcare',
     headline:
-      'Sole engineering voice on a BCG Classic + Platinion team — current-state assessment through future-state architecture.',
-    body: 'I was the only Dialexa resource on a joint BCG Classic and Platinion team, playing architect. I proved out current-state assessment, future-state architecture, asset creation, and selling skills directly alongside BCG, and turned a senior technical client stakeholder who doubted BCG could execute into an advocate for us leading the work.',
+      'Enterprise Architecture across multiple business groups in how to unify their work',
+    body: 'I was the only Dialexa resource on a joint BCG Classic and Platinion team, playing architect. I proved out current-state assessment, future-state architecture, asset creation, and selling skills directly alongside BCG, and turned a senior technical client stakeholder from intial critic, into an advocate for us leading the work.',
     impact: [
       'Only engineering resource on a blended strategy team',
       'Converted a skeptical technical stakeholder into a project advocate',
@@ -421,8 +421,8 @@ export const PROJECTS: Project[] = [
     role: 'Enterprise Architect, Pursuit Team',
     industry: 'healthcare',
     headline:
-      'Radiation oncology transformation — requested by name to architect a pursuit projected at ~$100M.',
-    body: "BCG leadership asked for me by name. At 50% allocation I ran a rapid current-state assessment of Varian's apps, services, infrastructure, and DevOps, built them a north-star architecture, ran technical interviews with their senior executives, assisted on data and cyber assessment, and did the roadmapping, estimation, and team sizing.",
+      'Radiation oncology transformation',
+    body: "BCG leadership asked for me by name. At 50% allocation I ran a rapid current-state assessment of Varian's apps, services, infrastructure, and DevOps, built them a north-star architecture, ran technical interviews with their senior executives, assisted on data and cyber assessment, and did the roadmapping, estimation, and team sizing for the build.",
     impact: [
       'Owned 4 layers of BCG’s delivery framework on the pursuit',
       'Built the north-star architecture from executive interviews',

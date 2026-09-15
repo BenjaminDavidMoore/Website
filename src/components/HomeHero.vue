@@ -4,14 +4,16 @@ import { RouterLink } from 'vue-router'
 import photoUrl from '@/assets/profile.jpg'
 
 const words = [
+  'Thinking',
+  'Learning',
   'Consulting',
+  'Adventuring',
   'Making',
   'Reading',
-  'Adventuring',
   'Climbing',
-  'Overlanding',
-  'Cooking',
-  'Playing',
+  'Lifting',
+  'Crafting',
+  'Building'
 ] as const
 
 const index = ref(0)
