@@ -5,7 +5,6 @@ const links = [
   { to: '/consulting', label: 'Consulting' },
   { to: '/making', label: 'Making' },
   { to: '/reading', label: 'Reading' },
-  { to: '/adventuring', label: 'Adventuring' },
 ] as const
 </script>
 
